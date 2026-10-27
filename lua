@@ -1,11 +1,6 @@
--- SPENT HUB v16 - PREMIUM VISUAL ENHANCEMENT
--- Enhanced with: glassmorphism, advanced glow effects, smooth animations,
--- ripple effects, particle systems, and premium UI polish
-
 if not game:IsLoaded() then game.Loaded:Wait() end
 if not syn or not protectgui then getgenv().protectgui = function() end end
 
--- ============ ENHANCED STARTUP NOTIFICATION ============
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -111,7 +106,6 @@ TweenService:Create(startupGlow, TweenInfo.new(0.35), {Transparency = 1}):Play()
 task.wait(0.4)
 pcall(function() startupGui:Destroy() end)
 
--- ============ SILENT AIM SETTINGS ============
 local SilentAimSettings = {
     Enabled = false,
     ClassName = "Universal Silent Aim - Averiias, Stefanuk12, xaxa",
@@ -146,34 +140,23 @@ getgenv().SilentAimSettings = SilentAimSettings
 local TARGET_LOCK_COLOR = Color3.fromRGB(255, 182, 193)
 local RING_IDLE_COLOR   = Color3.fromRGB(200, 200, 220)
 
--- ============ ENHANCED THEME ============
 local Theme = {
-    -- Primary accent - Light Pink (default)
     ACCENT = Color3.fromRGB(255, 182, 193),
     ACCENT_LIGHT = Color3.fromRGB(255, 200, 220),
     ACCENT_DARK = Color3.fromRGB(240, 150, 180),
-    
-    -- Background colors with glassmorphic treatment
     BG_MAIN = Color3.fromRGB(12, 12, 16),
     BG_PANEL = Color3.fromRGB(18, 18, 24),
     BG_OPT = Color3.fromRGB(28, 28, 36),
     BG_HOVER = Color3.fromRGB(38, 38, 48),
     BG_ACTIVE = Color3.fromRGB(48, 48, 60),
-    
-    -- Borders and accents
     BORDER = Color3.fromRGB(50, 50, 65),
     BORDER_STRONG = Color3.fromRGB(70, 70, 90),
-    
-    -- Text colors
     TEXT = Color3.fromRGB(235, 235, 245),
     TEXT_DIM = Color3.fromRGB(150, 150, 160),
     TEXT_STRONG = Color3.fromRGB(255, 255, 255),
     TEXT_MUTED = Color3.fromRGB(120, 120, 130),
-    
-    -- Gradient accents
     GRADIENT_1 = Color3.fromRGB(255, 182, 193),
     GRADIENT_2 = Color3.fromRGB(220, 160, 200),
-    
     ICON = "거",
 }
 
@@ -214,7 +197,6 @@ fov_circle.ZIndex = 999
 fov_circle.Transparency = 0.9
 fov_circle.Color = Color3.fromRGB(255, 182, 193)
 
--- ============ CORE FUNCTIONS (unchanged) ============
 local ExpectedArguments = {
     FindPartOnRayWithIgnoreList = {
         ArgCountRequired = 3,
@@ -372,7 +354,6 @@ local function getClosestPlayer()
     return Closest
 end
 
--- ============ ENHANCED ESP SYSTEM ============
 local espCache = {}
 local ESP_UPDATE_INTERVAL = 1 / 30
 local HIGHLIGHT_CHECK_INTERVAL = 0.1
@@ -571,7 +552,6 @@ local function updateESP()
     end
 end
 
--- ============ ENHANCED GUI SYSTEM ============
 local gui = Instance.new("ScreenGui")
 gui.Name = "SpentHub"
 gui.ResetOnSpawn = false
@@ -580,7 +560,6 @@ gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.DisplayOrder = 100
 gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 
--- ============ BACKGROUND BLUR EFFECT (Glassmorphism) ============
 local bgBlur = Instance.new("Frame", gui)
 bgBlur.Name = "BGBlur"
 bgBlur.Size = UDim2.new(0, 750, 0, 450)
@@ -623,7 +602,6 @@ mainGlow.Thickness = 4
 mainGlow.Transparency = 0.88
 Instance.new("UICorner", mainGlow).CornerRadius = UDim.new(0.025, 0)
 
--- Breathing glow animation
 task.spawn(function()
     while gui.Parent and main.Parent do
         pcall(function()
@@ -670,7 +648,6 @@ icon.Font = Enum.Font.GothamBold
 icon.TextSize = 24
 icon.ZIndex = 102
 
--- Pulsing icon animation
 task.spawn(function()
     while gui.Parent and icon.Parent do
         pcall(function() 
@@ -858,7 +835,6 @@ contentStroke.Color = Theme.BORDER
 contentStroke.Thickness = 0.5
 contentStroke.Transparency = 0.5
 
--- Animated accent line with gradient
 local accentLine = Instance.new("Frame", content)
 accentLine.Size = UDim2.new(0, 70, 0, 2.5)
 accentLine.Position = UDim2.new(0, 14, 0, 34)
@@ -943,7 +919,6 @@ hubGlow.Thickness = 5
 hubGlow.Transparency = 0.85
 Instance.new("UICorner", hubGlow).CornerRadius = UDim.new(1, 0)
 
--- Breathing glow for hub button
 task.spawn(function()
     while hubToggleBtn.Parent do
         pcall(function()
@@ -977,7 +952,6 @@ hubToggleBtn.MouseLeave:Connect(function()
     TweenService:Create(hubGlow, TweenInfo.new(0.15), {Transparency = 0.88}):Play()
 end)
 
--- ============ ENHANCED NOTIFICATIONS ============
 local notifFrame = Instance.new("Frame", gui)
 notifFrame.Size = UDim2.new(0, 340, 0, 400)
 notifFrame.Position = UDim2.new(1, -360, 0, 110)
@@ -1211,7 +1185,6 @@ local function notify(text, color)
     end)
 end
 
--- ============ ENHANCED UI ELEMENTS ============
 local function makeSection(text)
     local s = Instance.new("TextLabel", scroll)
     s.Size = UDim2.new(1, 0, 0, 18)
@@ -1712,9 +1685,9 @@ local function buildInfo()
     info.TextXAlignment = Enum.TextXAlignment.Left
     info.TextYAlignment = Enum.TextYAlignment.Top
     info.Text = [[
- 거 SPENT HUB v16 ENHANCED
+ 거 SPENT HUB 
 
- Visual Upgrades:
+ Visual Upgrades: VIbecoded
  • Glassmorphic UI
  • Smooth transitions
  • Button ripple effects
@@ -1904,7 +1877,6 @@ searchBox:GetPropertyChangedSignal("Text"):Connect(function()
     end
 end)
 
--- ============ ENHANCED OPEN/CLOSE ANIMATIONS ============
 local openState = "idle"
 local activeOpenTweens = {}
 local activeCloseTweens = {}
@@ -2114,7 +2086,6 @@ UserInputService.InputBegan:Connect(function(input, processed)
     end
 end)
 
--- ============ MAIN RENDER LOOP ============
 task.spawn(function()
     RenderStepped:Connect(function()
         local lockedTarget = getClosestPlayer()
@@ -2147,7 +2118,6 @@ task.spawn(function()
     end)
 end)
 
--- ============ SILENT AIM HOOKS ============
 local oldNamecall
 oldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
     local Method = getnamecallmethod()
@@ -2224,4 +2194,4 @@ notify("SPENT HUB v16 ENHANCED loaded", Theme.ACCENT)
 task.delay(0.4, function()
     notify("RMB aim · RAlt toggle · RShift GUI", Theme.TEXT_DIM)
 end)
-print("SPENT HUB v16 ENHANCED loaded.")
+print("SPENT HUB loaded.")
